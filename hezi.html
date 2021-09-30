@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			body{
+				perspective: 1000px;
+			}
+			.box{
+				transform-style: preserve-3d; /* 3d变形的效果 */
+				position: relative;
+				margin: 50px auto;
+				width: 800px;
+				height: 800px;
+				/* border: 1px solid; */
+				transform: rotateX(-180deg) rotateY(-10deg);
+				/*position: fixed; 
+				left: 50%; 
+				margin-left: -400px;  水平居中 宽的一半*/
+				animation: move 5s linear 0s infinite alternate;
+			}
+			.box .a{
+				background: currentcolor; /* 让背景颜色等于每个块的文本颜色 */
+				position: absolute;
+				width: 100px;
+				height: 100px;
+				left: 50%; /* 父元素的一半的距离 居中*/
+				top: 50%;/* 父元素的一半的距离 居中*/
+				margin-top: -50px;/* 居中 */
+				margin-left: -50px;/* 居中 */
+				/* opacity: .5; */
+				/*border: 1px  solid; 辅助观察
+				font-size: 150px;
+				text-align: center;
+				line-height: 200px; */
+				
+			}
+			.box:hover div{
+				box-shadow: 0px 0px 10px currentcolor; /*所有和color一样的颜色都可以用currentcolor替代 阴影 */
+			}
+			.box .a1{
+				color: palegoldenrod;
+				/* background: palegoldenrod; */
+				transform: translateZ(50px);
+			}
+			.box .a2{
+				color: palegreen;
+				/* background: palegreen; */
+				transform: rotateY(180deg) translateZ(50px);
+			}
+			.box .a3{
+				color: paleturquoise;
+			/* background:paleturquoise; */
+				transform: rotateX(90deg) translateZ(50px);
+			}
+			.box .a4{
+				color:palevioletred;
+			/* background:palevioletred; */
+				transform: rotateX(-90deg) translateZ(50px);
+			}
+			.box .a5{
+				color: pink;
+			/* background:pink; */
+				transform:rotateY(90deg) translateZ(50px); 
+			}
+			.box .a6{
+				color: plum;
+			/* background:plum; */
+				transform:rotateY(-90deg) translateZ(50px); 
+			}
+			@keyframes move{
+			 0%{
+					transform: rotatex(0deg);
+				} 
+				100%{
+					transform:rotatex(360deg) rotatey(360deg);
+				}
+				}
+				.box .b{
+					background: black; 
+					position: absolute;
+					width: 200px;
+					height: 200px;
+					left: 50%; /* 父元素的一半的距离 居中*/
+					top: 50%;/* 父元素的一半的距离 居中*/
+					margin-top: -100px;
+					margin-left: -100px;
+					opacity: .3;
+					/*border: 1px  solid; 辅助观察
+					font-size: 150px;
+					text-align: center;
+					line-height: 200px; */
+				}
+				.box:hover .b1{
+					 transform: translateZ(150px); 
+					 transition: 3s;
+				}
+				.box:hover .b2{
+					 transform:rotateY(180deg) translateZ(150px); 
+					 transition: 3s;
+				}
+				.box:hover .b3{
+					 transform:  rotateX(90deg) translateZ(150px); 
+					 transition: 3s;
+				}
+				.box:hover .b4{
+					 transform: rotateX(-90deg)  translateZ(150px); 
+					 transition: 3s;
+				}
+				.box:hover .b5{
+					 transform:rotateY(90deg)  translateZ(150px); 
+					 transition: 3s;
+				}
+				.box:hover .b6{
+					 transform:rotateY(-90deg) translateZ(150px); 
+					 transition: 3s;
+				}
+				.box .b1{
+					transform: translateZ(100px);
+				}
+				.box .b2{
+					transform: rotateY(180deg) translateZ(100px);
+				}
+				.box .b3{
+					transform: rotateX(90deg) translateZ(100px);
+				}
+				.box .b4{
+					transform: rotateX(-90deg) translateZ(100px);
+				}
+				.box .b5{
+					transform:rotateY(90deg) translateZ(100px); 
+				}
+				.box .b6{
+					transform:rotateY(-90deg) translateZ(100px); 
+				}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<div class="a a1"></div>
+			<div class="a a2"></div>
+			<div class="a a3"></div>
+			<div class="a a4"></div>
+			<div class="a a5"></div>
+			<div class="a a6"></div> 
+			<div class="b b1"></div>
+			<div class="b b2"></div>
+			<div class="b b3"></div>
+			<div class="b b4"></div>
+			<div class="b b5"></div>
+			<div class="b b6"></div>
+		</div>
+	</body>
+</html>
