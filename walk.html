@@ -4,9 +4,9 @@
 		<meta charset="utf-8">
 		<title></title>
 		<style type="text/css">
-			.box{ /* 图片的宽高为1080*293 帧数为多少个动作*/
+			.box{ /* 图片的宽高为1680*293 帧数为多少个动作*/
 				height: 293px;/* 图片高度 */
-				width: 180px;/* 图片总宽度除以帧数 1680/12*/
+				width: 160px;/* 图片总宽度除以帧数 1080/6*/
 				background:url(images/walk.jpg) left no-repeat;
 				animation: move 1s steps(6) infinite;/* steps() 里面写的数字是多少个次数 这个是6次 */
 			}
@@ -15,7 +15,7 @@
 					background-position: 0 0;
 				}
 				to{
-					background-position: -293px; /* 图片的总宽度 */
+					background-position: -1080px; /* 图片的总宽度 */
 				}
 			}
 		</style>
