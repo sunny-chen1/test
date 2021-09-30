@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			.a{
+				width: 300px;
+				height: 300px;
+				border: 1px solid;
+				border-radius: 50%;
+				margin: 200px auto;
+				position: relative;
+				animation: move 4s linear 0s infinite;
+			}
+			.b{
+				width: 100px;
+				height: 100px;
+				background-color: red;
+				border-radius: 50%;
+				position: absolute;
+				left: 100px;
+				bottom: 100px;
+				box-shadow: 0px 0px 10px red; /* 阴影虚化 */
+			}
+			.c{
+				width: 200px;
+				height: 200px;
+				border: 1px solid;
+				border-radius: 50%;
+				position: absolute;
+				left: -60px;
+				top: -60px;
+				animation: move 4s linear 0s infinite;
+			}
+			.d{
+				width: 50px;
+				height: 50px;
+				background-color: green;
+				border-radius: 50%;
+				position: absolute;
+				left: 80px;
+				bottom: 80px;
+			}
+			.e{
+				width: 20px;
+				height: 20px;
+				background-color: blue;
+				border-radius: 50%;
+				position: absolute;
+				left: 45px;
+			}
+			@keyframes move{
+				0%{
+					transform: rotate(0deg);
+				}
+				100%{
+					transform: rotate(360deg);
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="a">
+			<div class="b"></div>
+			<div class="c">
+				<div class="d"></div>
+				<div class="e"></div>
+			</div>
+		</div>
+	</body>
+</html>

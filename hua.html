@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			.box{ /* 图片的宽高为438*119 帧数为多少个动作*/
+				height: 119px;/* 图片高度 */
+				width: 73px;/* 图片总宽度除以帧数 438/6*/
+				background:url(images/hua.jpg) left no-repeat;
+				animation: move 1s steps(6) infinite;/* steps() 里面写的数字是多少个次数 这个是6次 */
+			}
+			@keyframes move{
+				from{
+					background-position: 0 0;
+				}
+				to{
+					background-position: -438px; /* 图片的总宽度 */
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box"></div>
+	</body>
+</html>
