@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			.loading{ /* 图片的宽高为800*100 帧数为多少个动作*/
+				height: 100px;/* 图片高度 */
+				width: 100px;/* 图片总宽度除以帧数 800/8*/
+				background: url(images/loading.png) left no-repeat;
+				animation: loading 1s steps(8) infinite;/* steps() 里面写的数字是多少个次数 这个是8次 */
+			}
+			@keyframes loading{
+				from{
+					background-position: 0 0;
+				}
+				to{
+					background-position: -800px 0; /* 图片的总宽度 */
+				}
+			}
+			.hua{ 
+				height: 119px;/* 图片高度 */
+				width: 73px;/* 图片总宽度除以帧数 */
+				background: url(images/hua.jpg) left no-repeat;
+				animation: hua 4s steps(6) infinite;/* steps() 里面写的数字是多少个次数 */
+			}
+			@keyframes hua{
+				from{
+					background-position: 0 0;
+				}
+				to{
+					background-position: -438px 0; /* 图片的总宽度 */
+				}
+			}
+			.jd{
+				height: 682px;/* 图片高度 */
+				width: 662px;/* 图片总宽度除以帧数 */
+				background: url(images/jd.png) left no-repeat;
+				animation: jd 3s steps(3) infinite;/* steps() 里面写的数字是多少个次数 */
+			}
+			@keyframes jd{
+				from{
+					background-position: 0 0;
+				}
+				to{
+					background-position:0 -2045px ; /* 图片的总宽度 */
+				}
+			}
+			.run{
+				height: 140px;/* 图片高度 */
+				width: 140px;/* 图片总宽度除以帧数 */
+				background: url(images/run.png) left no-repeat;
+				animation: run 4s steps(12) infinite;/* steps() 里面写的数字是多少个次数 */
+			}
+			@keyframes run{
+				from{
+					background-position: 0 0;
+				}
+				to{
+					background-position: -1680px 0; /* 图片的总宽度 */
+				}
+			}
+			.run2{ 
+				height: 156px;/* 图片高度 */
+				width: 137px;/* 图片总宽度除以帧数 */
+				background: url(images/run2.png) left no-repeat;
+				animation: run2 1s steps(10) infinite;/* steps() 里面写的数字是多少个次数 这个是8次 */
+			}
+			@keyframes run2{
+				from{
+					background-position: 0 0;
+				}
+				to{
+					background-position: -1372px; /* 图片的总宽度 */
+				}
+			}
+			.walk{ 
+				height: 293px;/* 图片高度 */
+				width: 166px;/* 图片总宽度除以帧数*/
+				background: url(images/walk.jpg) left no-repeat;
+				animation: walk 1s steps(6) infinite;/* steps() 里面写的数字是多少个次数 这个是8次 */
+			}
+			@keyframes walk{
+				from{
+					background-position: 0 0;
+				}
+				to{
+					background-position: -1080px; /* 图片的总宽度 */
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="loading"></div>
+		<div class="hua"></div>
+		<div class="run"></div>
+		<div class="run2"></div>
+		<div class="walk"></div>
+		<div class="jd"></div>
+	</body>
+</html>

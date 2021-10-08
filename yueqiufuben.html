@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			@keyframes rotate{
+				from{
+					transform: rotate(0deg);
+				}
+				to{
+					transform: rotate(360deg);
+				}
+			}
+			div{
+				border-radius: 50%;
+				position: absolute;
+			}
+			.sun1{
+				margin: 200px auto 0;
+				position: relative;
+				width: 500px;
+				height: 500px;
+				border: 5px solid;
+				animation: rotate 5s linear infinite;
+			}
+			.sun{
+				/* position: absolute; */
+				width: 150px;
+				height: 150px;
+				background-color: red;
+				box-shadow: 0 0 10px red;
+				left: 175px;/* 250-75 */
+				top: 175px;
+			}
+			.earth1{
+				/* position: absolute; */
+				left: 145px;
+				top: -107px;
+				border: 5px solid;
+				width: 200px;
+				height: 200px;
+				animation: rotate 2s linear infinite;
+			}
+			.earth{
+				/* position: absolute; */
+				width: 60px;
+				height: 60px;
+				background-color: green;
+				left: 70px;
+				top: 70px;
+			}
+			.moon{
+				width: 20px;
+				height: 20px;
+				background-color: blue;
+				left: 90px;
+				top: -12px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="sun1">
+			<div class="sun"></div>
+			<div class="earth1">
+				<div class="earth"></div>
+				<div class="moon"></div>
+			</div>
+		</div>
+	</body>
+</html>

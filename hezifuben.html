@@ -4,21 +4,29 @@
 		<meta charset="utf-8">
 		<title></title>
 		<style type="text/css">
+			@keyframes rotate{
+				from{
+					transform: rotateX(0deg) rotateY(0deg);
+				}
+				to{
+					transform: rotateX(360deg) rotateY(-360deg);
+				}
+			}
 			body{
 				perspective: 1000px;
 			}
 			.box{
 				transform-style: preserve-3d; /* 3d变形的效果 */
 				position: relative;
-				margin: 50px auto;
+				margin: 50px auto 0;
 				width: 800px;
 				height: 800px;
 				/* border: 1px solid; */
-				/* transform: rotateX(-180deg) rotateY(-10deg); */
+				animation: rotate 5s linear infinite;
+				/* transform: rotateX(-10deg) rotateY(-30deg); */
 				/*position: fixed; 
 				left: 50%; 
 				margin-left: -400px;  水平居中 宽的一半*/
-				animation: move 5s linear 0s infinite ;
 			}
 			.box .a{
 				background: currentcolor; /* 让背景颜色等于每个块的文本颜色 */
@@ -35,7 +43,6 @@
 				font-size: 150px;
 				text-align: center;
 				line-height: 200px; */
-				
 			}
 			.box:hover div{
 				box-shadow: 0px 0px 10px currentcolor; /*所有和color一样的颜色都可以用currentcolor替代 阴影 */
@@ -70,66 +77,54 @@
 			/* background:plum; */
 				transform:rotateY(-90deg) translateZ(50px); 
 			}
-			@keyframes move{
-			 0%{
-					transform: rotatex(0deg);
-				} 
-				100%{
-					transform:rotatex(360deg) rotatey(360deg);
-				}
-				}
-				.box .b{
-					background: black; 
-					position: absolute;
-					width: 200px;
-					height: 200px;
-					left: 50%; /* 父元素的一半的距离 居中*/
-					top: 50%;/* 父元素的一半的距离 居中*/
-					margin-top: -100px;
-					margin-left: -100px;
-					opacity: .3;
-					transition: 3s linear;
-					/*border: 1px  solid; 辅助观察
-					font-size: 150px;
-					text-align: center;
-					line-height: 200px; */
-				}
-				.box:hover .b1{
-					 transform: translateZ(150px); 
-				}
-				.box:hover .b2{
-					 transform:rotateY(180deg) translateZ(150px); 
-				}
-				.box:hover .b3{
-					 transform:  rotateX(90deg) translateZ(150px); 
-				}
-				.box:hover .b4{
-					 transform: rotateX(-90deg)  translateZ(150px); 
-				}
-				.box:hover .b5{
-					 transform:rotateY(90deg)  translateZ(150px); 
-				}
-				.box:hover .b6{
-					 transform:rotateY(-90deg) translateZ(150px); 
-				}
-				.box .b1{
-					transform: translateZ(100px);
-				}
-				.box .b2{
-					transform: rotateY(180deg) translateZ(100px);
-				}
-				.box .b3{
-					transform: rotateX(90deg) translateZ(100px);
-				}
-				.box .b4{
-					transform: rotateX(-90deg) translateZ(100px);
-				}
-				.box .b5{
-					transform:rotateY(90deg) translateZ(100px); 
-				}
-				.box .b6{
-					transform:rotateY(-90deg) translateZ(100px); 
-				}
+			.box .b{
+				background-color: #AAA;
+				opacity: .5;
+				position: absolute;
+				width: 200px;
+				height: 200px;
+				left: 50%;
+				top: 50%;
+				margin-left: -100px;
+				margin-top: -100px;
+				transition: 3s linear;
+			}
+			.box .b1{
+				transform: translateZ(100px);
+			}
+			.box .b2{
+				transform: rotateY(180deg) translateZ(100px);
+			}
+			.box .b3{
+				transform: rotateX(90deg) translateZ(100px);
+			}
+			.box .b4{
+				transform: rotateX(-90deg) translateZ(100px);
+			}
+			.box .b5{
+				transform:rotateY(90deg) translateZ(100px); 
+			}
+			.box .b6{
+				transform:rotateY(-90deg) translateZ(100px); 
+			}
+			.box:hover .b1{
+				transform: translateZ(150px);
+			}
+			.box:hover .b2{
+				transform: rotateY(180deg) translateZ(150px);
+			}
+			.box:hover .b3{
+				transform: rotateX(90deg) translateZ(150px);
+			}
+			.box:hover .b4{
+				transform: rotateX(-90deg) translateZ(150px);
+			}
+			.box:hover .b5{
+				transform:rotateY(90deg) translateZ(150px); 
+			}
+			.box:hover .b6{
+				transform:rotateY(-90deg) translateZ(150px); 
+			}
 		</style>
 	</head>
 	<body>
