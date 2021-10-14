@@ -57,12 +57,27 @@
 				document.write('<br>');
 				
 				//第三题
-				for(let i=0;i<10;i++){
-					for(let j=0;j<10;j++){
+				// for(let i=0;i<10;i++){
+				// 	for(let j=0;j<10;j++){
+				// 		document.write(i);
+				// 		document.write(j);
+				// 		document.write(' ');
+				// 	}
+				// 	document.write('<br>');
+				// }
+				
+				for(let i=0;i<100;i++){
+					if(i<10){
+						document.write(0);
 						document.write(i);
-						document.write(j+' ');
+						document.write(' ');
+					}else{
+						document.write(i);
+						document.write(' ');
 					}
-					document.write('<br>');
+					if((i+1)%10===0){
+						document.write('<br>');
+					}
 				}
 				document.write('<br>');
 				document.write('<br>');
