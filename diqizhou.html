@@ -27,11 +27,11 @@
 				const submit=document.querySelector('#submit');
 				submit.onclick=function(e){
 					if(a.value==='' || b.value===''){
-						e.preventDefault(); //取消默认操作，阻止表单提交
+						// e.preventDefault(); //取消默认操作，阻止表单提交
 						para.textContent='请输入a和b的值';
 					}else{
 						if(isNaN(a.value) || isNaN(b.value)){
-						e.preventDefault(); //取消默认操作，阻止表单提交
+						// e.preventDefault(); //取消默认操作，阻止表单提交
 						para.textContent='请输入数值型a和b';
 					 }else{
 						 let aa=Number(a.value);
