@@ -5,7 +5,7 @@
 		<title></title>
 	</head>
 	<body>
-		<div>
+		<!-- <div>
 			<h2>拓展</h2>
 			<label for="a">请输入数字a：</label>
 			<input id="a" type="text">
@@ -17,36 +17,36 @@
 		<div>
 			<input id="submit" type="submit">
 		</div>
-		<p></p>
+		<p></p> -->
 		<script>
 	// document.write('<h2>拓展</h2>');
 				
-				const a=document.querySelector('#a');
-				const b=document.querySelector('#b');
-				const para=document.querySelector('p');
-				const submit=document.querySelector('#submit');
-				submit.onclick=function(e){
-					if(a.value==='' || b.value===''){
-						// e.preventDefault(); //取消默认操作，阻止表单提交
-						para.textContent='请输入a和b的值';
-					}else{
-						if(isNaN(a.value) || isNaN(b.value)){
-						// e.preventDefault(); //取消默认操作，阻止表单提交
-						para.textContent='请输入数值型a和b';
-					 }else{
-						 let aa=Number(a.value);
-						 let bb=Number(b.value);
-						if(aa>bb){
-							para.textContent=`a的值为${aa},b的值为${bb},a大于b`;
-						}else if(aa<bb){
-							para.textContent=`a的值为${aa},b的值为${bb},a小于b`;
-						}else{
-							para.textContent=`a的值为${aa},b的值为${bb},a等于b`;
-						}
-					 }
-					} 
-				}
-							document.write('<hr>');
+				// const a=document.querySelector('#a');
+				// const b=document.querySelector('#b');
+				// const para=document.querySelector('p');
+				// const submit=document.querySelector('#submit');
+				// submit.onclick=function(e){
+				// 	if(a.value==='' || b.value===''){
+				// 		// e.preventDefault(); //取消默认操作，阻止表单提交
+				// 		para.textContent='请输入a和b的值';
+				// 	}else{
+				// 		if(isNaN(a.value) || isNaN(b.value)){
+				// 		// e.preventDefault(); //取消默认操作，阻止表单提交
+				// 		para.textContent='请输入数值型a和b';
+				// 	 }else{
+				// 		 let aa=Number(a.value);
+				// 		 let bb=Number(b.value);
+				// 		if(aa>bb){
+				// 			para.textContent=`a的值为${aa},b的值为${bb},a大于b`;
+				// 		}else if(aa<bb){
+				// 			para.textContent=`a的值为${aa},b的值为${bb},a小于b`;
+				// 		}else{
+				// 			para.textContent=`a的值为${aa},b的值为${bb},a等于b`;
+				// 		}
+				// 	 }
+				// 	} 
+				// }
+			document.write('<hr>');
 			document.write('<h2>练习题二第1题</h2>');
 			let a1=12;
 			let b1=3;
@@ -145,7 +145,38 @@
 				document.write(test(1,2,3,4));
 				document.write('<hr>');
 				
-			
+			document.write('<h2>拓展</h2>');
+			document.write('<div>')
+			document.write('<label for="d1">请输入数字a：</label>')
+			document.write('<input id="d1" type="text"/>')
+			document.write('</div>')
+			document.write('<div>')
+			document.write('<label for="d2">请输入数字b：</label>')
+			document.write('<input id="d2" type="text"/>')
+			document.write('</div>')
+			document.write('<button id="btn">确定</button>')
+			document.write('<p id="p1"></p>')
+			let d1=document.querySelector('#d1');
+			let d2=document.querySelector('#d2');
+			let btn=document.querySelector('#btn');
+			let para1=document.querySelector('#p1')
+			btn.onclick=function(){
+				if(d1.value==='' || d2.value===''){
+					para1.textContent="请不要输入空值";
+				}else if(isNaN(Number(d1.value)) || isNaN(Number(d2.value))){
+					para1.textContent="请输入数字";
+				}else{
+					let dd1=Number(d1.value);
+					let dd2=Number(d2.value);
+					if(dd1>dd2){
+						para1.textContent=`a的值为${dd1},b的值为${dd2},a大于b`;
+					}else if(dd1<dd2){
+						para1.textContent=`a的值为${dd1},b的值为${dd2},a小于b`;
+					}else{
+						para1.textContent=`a的值为${dd1},b的值为${dd2},a等于b`;
+					}
+				}
+			}
 		</script>
 	</body>
 </html>
