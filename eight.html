@@ -34,16 +34,12 @@
 					let hour=dt.getHours();
 					let minutes=dt.getMinutes();
 					let second=dt.getSeconds();
-					let week=dt.getDay()
-					let time= year+"年"+month+"月"+date+"日 "+hour+":"+minutes+":"+second+" 星期"+week;
+					let week1='日一二三四五六七'
+					let time= year+"年"+month+"月"+date+"日 "+hour+":"+minutes+":"+second+" 星期"+week1[dt.getDay()];
 					a.textContent=time;
 				}
 				getdate();
 				setInterval(getdate,1000);
-				// document.write(getdate());
-				// let d=new Date();
-				//     let week='日一二三四五六七'
-				//     document.write(`${d.getFullYear()}年${d.getMonth()+1}月${d.getDate()}日,${d.getHours()}:${d.getMinutes()}:${d.getSeconds()},星期${week[d.getDay()]}`+'<br>');
 				document.write('<hr>');
 			}
 			{
@@ -74,13 +70,6 @@
 			document.body.appendChild(input1);
 			let txt=document.createTextNode('\n');
 			document.body.appendChild(txt);
-			
-			// document.write('<select name="f">')
-			// document.write('<option value="1">+</option>')
-			// document.write('<option value="2">-</option>')
-			// document.write('<option value="3">*</option>')
-			// document.write('<option value="4">/</option>')
-			// document.write('</select>')
 			
 			let mysel=document.createElement('select');
 			mysel.id='citysel';
@@ -113,21 +102,16 @@
 			input3.setAttribute('placeholder','结果');
 			input3.setAttribute('id','text3')
 			document.body.appendChild(input3);
-			
-			const para=document.createElement('p');
-			document.body.appendChild(para);
-			
 			button.addEventListener('click',function(){
 				let index=mysel.selectedIndex;//获取当前选中项的索引
 				let i=mysel.options[index].text;//获取当前选中项的文本内容
 				let jg=0;
 				let a=input1.value.trim();
 				let b=input2.value.trim();
-				let msg='';
 				if(a===''  || b===''){
-					msg='没有提供a或b的值';
+					document.getElementById('text3').value = '没有提供a或b的值';
 				}else if(isNaN(a)  || isNaN(b)){
-					msg='a或b的值不是数字';
+					document.getElementById('text3').value = 'a或b的值不是数字';
 				}else{
 					a-=0;
 					b-=0;//进行隐形的字符转化
@@ -143,7 +127,7 @@
 					// }
 					// if(index===3){
 					// 	if(b===0){
-					// 		msg='除数不可以为0';
+					// document.getElementById('text3').value = '除数不可以为0';
 					// 	}else{
 					// 	jg=a/b;
 					// 	}
@@ -160,14 +144,13 @@
 					}
 					if(i==='/'){
 						if(b===0){
-							msg='除数不可以为0';
+							document.getElementById('text3').value = '除数不可以为0';
 						}else{
 						jg=a/b;
 						}
 					}
 				}
 				para.textContent=msg;
-				// input3.textContent=jg;
 				document.getElementById('text3').value = jg;
 			});
 			
