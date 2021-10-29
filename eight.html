@@ -45,7 +45,7 @@
 			let b='';
 			for(let i=0;i<=3;i++){
 				let a=Math.floor(Math.random()*10);
-				b+=a+' ';
+				b+=a;
 			}
 			document.write(`产生的四位随机数为：${b}`);
 			document.write('<hr>');
@@ -58,7 +58,6 @@
 			document.body.appendChild(input1);
 			let txt=document.createTextNode('\n');
 			document.body.appendChild(txt);
-			
 			let mysel=document.createElement('select');
 			mysel.id='citysel';
 			document.body.appendChild(mysel);
@@ -68,32 +67,26 @@
 			obj.add(new Option('*',3));
 			obj.add(new Option('/',4));
 			// let index=mysel.selectedIndex;//获取当前选中项的索引
-			
 			txt=document.createTextNode('\n');
 			document.body.appendChild(txt);
-			
 			const input2=document.createElement('input');
 			input2.setAttribute('type','Text');
 			input2.setAttribute('placeholder','输入b的值');
 			document.body.appendChild(input2);
 			txt=document.createTextNode('\n');
 			document.body.appendChild(txt);
-			
 			const button=document.createElement('button');
 			button.textContent='=';
 			document.body.appendChild(button);
 			txt=document.createTextNode('\n');
 			document.body.appendChild(txt);
-			
 			const input3=document.createElement('input');
 			input3.setAttribute('type','Text');
 			input3.setAttribute('placeholder','结果');
 			input3.setAttribute('id','text3')
 			document.body.appendChild(input3);
-			
 			const para=document.createElement('p');
 			document.body.appendChild(para);
-			
 			button.addEventListener('click',function(){
 				let index=mysel.selectedIndex;//获取当前选中项的索引
 				let i=mysel.options[index].text;//获取当前选中项的文本内容
