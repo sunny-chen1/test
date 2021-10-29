@@ -38,8 +38,12 @@
 					let time= year+"年"+month+"月"+date+"日 "+hour+":"+minutes+":"+second+" 星期"+week;
 					a.textContent=time;
 				}
+				getdate();
 				setInterval(getdate,1000);
 				// document.write(getdate());
+				// let d=new Date();
+				//     let week='日一二三四五六七'
+				//     document.write(`${d.getFullYear()}年${d.getMonth()+1}月${d.getDate()}日,${d.getHours()}:${d.getMinutes()}:${d.getSeconds()},星期${week[d.getDay()]}`+'<br>');
 				document.write('<hr>');
 			}
 			{
@@ -56,7 +60,7 @@
 			document.write('<h2>练习题5，第二题</h2>');
 			let b='';
 			for(let i=0;i<=3;i++){
-				let a=Math.floor(Math.random()*8999+1000);
+				let a=Math.floor(Math.random()*10);
 				b+=a+' ';
 			}
 			document.write(`产生的四位随机数为：${b}`);
