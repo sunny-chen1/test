@@ -24,24 +24,12 @@
 			}
 			{
 				document.write('<h2>练习题4，第三题</h2>');
-				document.write('<p id="a"></p>')
-				let a=document.querySelector('#a');
-				function getdate(){
-					let dt=new Date();
-					let year=dt.getFullYear();
-					let month=dt.getMonth()+1;
-					let date=dt.getDate();
-					let hour=dt.getHours();
-					let minutes=dt.getMinutes();
-					let second=dt.getSeconds();
-					let week1='日一二三四五六七'
-					let time= year+"年"+month+"月"+date+"日 "+hour+":"+minutes+":"+second+" 星期"+week1[dt.getDay()];
-					a.textContent=time;
-				}
-				getdate();
-				setInterval(getdate,1000);
+				    let d=new Date();
+				    let week='日一二三四五六七'
+				    document.write(`${d.getFullYear()}年${d.getMonth()+1}月${d.getDate()}日,${d.getHours()}:${d.getMinutes()}:${d.getSeconds()},星期${week[d.getDay()]}`+'<br>');
 				document.write('<hr>');
 			}
+			
 			{
 				document.write('<h2>练习题4，第四题</h2>');
 				let a='12';
@@ -102,16 +90,21 @@
 			input3.setAttribute('placeholder','结果');
 			input3.setAttribute('id','text3')
 			document.body.appendChild(input3);
+			
+			const para=document.createElement('p');
+			document.body.appendChild(para);
+			
 			button.addEventListener('click',function(){
 				let index=mysel.selectedIndex;//获取当前选中项的索引
 				let i=mysel.options[index].text;//获取当前选中项的文本内容
 				let jg=0;
+				let msg='';
 				let a=input1.value.trim();
 				let b=input2.value.trim();
 				if(a===''  || b===''){
-					document.getElementById('text3').value = '没有提供a或b的值';
+					msg='没有提供a或b的值';
 				}else if(isNaN(a)  || isNaN(b)){
-					document.getElementById('text3').value = 'a或b的值不是数字';
+					msg='a或b的值不是数字';
 				}else{
 					a-=0;
 					b-=0;//进行隐形的字符转化
@@ -134,24 +127,25 @@
 					// }
 					//利用下拉菜单选中的文本内容
 					if(i==='+'){
-						jg=a+b;
+						text3.value=a+b;
 					}
 					if(i==='-'){
-						jg=a-b;
+						text3.value=a-b;
 					}
 					if(i==='*'){
-						jg=a*b;
+						text3.value=a*b;
 					}
 					if(i==='/'){
 						if(b===0){
-							document.getElementById('text3').value = '除数不可以为0';
+							text3.value=' ';
+							msg='除数不可以为0';
+							text3.disabled = true;
 						}else{
-						jg=a/b;
+						text3.value=a/b;
 						}
 					}
 				}
 				para.textContent=msg;
-				document.getElementById('text3').value = jg;
 			});
 			
 			document.write()
@@ -162,6 +156,26 @@
 			input1.addEventListener('focus',selAll);
 			input2.addEventListener('focus',selAll);
 			document.write('<hr>');
+			}
+			{
+				document.write('<h2>时间更新</h2>');
+				document.write('<p id="a"></p>')
+				let a=document.querySelector('#a');
+				function getdate(){
+					let dt=new Date();
+					let year=dt.getFullYear();
+					let month=dt.getMonth()+1;
+					let date=dt.getDate();
+					let hour=dt.getHours();
+					let minutes=dt.getMinutes();
+					let second=dt.getSeconds();
+					let week1='日一二三四五六七'
+					let time= year+"年"+month+"月"+date+"日 "+hour+":"+minutes+":"+second+" 星期"+week1[dt.getDay()];
+					a.textContent=time;
+				}
+				getdate();
+				setInterval(getdate,1000);
+				document.write('<hr>');
 			}
 		</script>
 	</body>
