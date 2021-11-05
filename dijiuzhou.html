@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			table,td{
+				border: 5px solid white;
+			}
+			table{
+				border-collapse: collapse;
+			}
+			td{
+				padding: 5px 10px;
+				text-align: center;
+			}
+			#left{
+				background-color: #abcdf2;
+			}
+			#right{
+				background-color: #fedcb9;
+				width: 400px;
+				text-align: left;
+				padding: 2px;
+			}
+			#sub{
+				background-color: #aabbcb;
+			}
+			caption{
+				margin-bottom: 1px;
+				font-size: 30px;
+				font-weight: bold;
+			}
+			#t1{
+				border: 1px solid black;
+				width: 150px;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>全选全不选</h1>
+		<input type="checkbox" id="boxid" >全选/全不选
+		<input type="button" value="反选" id="fx"><br>
+		<div id="t1">
+			<input type="checkbox" name="qx" >复选框说明信息<br>
+			<input type="checkbox" name="qx" >复选框说明信息<br>
+			<input type="checkbox" name="qx" >复选框说明信息<br>
+			<input type="checkbox" name="qx" >复选框说明信息<br>
+			<input type="checkbox" name="qx" >复选框说明信息<br>
+		</div>
+		<hr>
+		
+		<h1>表单验证第一个</h1>
+		<form action="ok.html" method="get" id="form1">
+		<label>姓名：</label><input type="text" name="name1" id="a"><br>
+		<label>密码：</label><input type="password" name="password1" value="" id="b"><br>
+		<label>性别：</label>
+		<input type="radio"  name="c" id="c1" checked>男
+		<input type="radio"  name="c" id="c2">女<br>
+		<label>年龄：</label>
+		<select name="select1">
+			<option value="1">20</option>
+			<option value="2">21</option>
+			<option value="3">23</option><br>
+		</select>
+		<br><label>爱好：</label>
+		<input type="checkbox" name="checkbox1" value="c1" id="like1" checked>读书
+		<input type="checkbox" name="checkbox1" value="c2" id="like2">音乐
+		<input type="checkbox" name="checkbox1" value="c3" id="like3">上网<br>
+		<br><label>简历：</label>
+		<textarea name="textarea1" cols="20" rows="7" id="resume"></textarea><br>
+		<input id="submit" type="submit">
+		<input type="reset" value="重置" ><br>
+		</form>
+		<p id="p1"></p>
+		<hr>
+		
+		<h1>表单验证第二个</h1>
+		<form action="ok.html" method="get" id="form2">
+		<table>
+			<caption>Information Form</caption> 
+			<tr>
+				<td id="left">
+					<label>name</label>
+				</td> 
+				<td id="right">
+					<input type="text" name="name2" id="name2"><br>
+				</td>
+			</tr>
+			<tr>
+				<td id="left">
+					<label>pwd</label>
+				</td> 
+				<td id="right">
+					<input type="password" name="pwd2" id="pwd2">
+				</td>
+			</tr>
+			<tr>
+				<td id="left">
+					<label>sex</label>
+				</td> 
+				<td id="right">
+					<input type="radio" name="rodio2" id="radio21" checked>male
+					<input type="radio" name="rodio2" id="radio22">female
+				</td>
+			</tr>
+			<tr>
+				<td id="left">
+					<label>age</label>
+				</td> 
+				<td id="right">
+					<select name="select2">
+						<option value="1">20</option>
+						<option value="2">21</option>
+						<option value="3">23</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td id="left">
+					<label>course</label>
+				</td> 
+				<td id="right">
+					<input type="checkbox" name="checkbox2" value="c1" id="like21" checked>Chinese
+					<input type="checkbox" name="checkbox2" value="c2" id="like22">Math
+					<input type="checkbox" name="checkbox2" value="c3" id="like23">English
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2" id="sub">
+					<input id="submit2" type="submit" value="Submit it!">
+					<input type="reset" value="Reset it!" >
+				</td>
+			</tr>
+			</table>
+			</form>
+			<p id="p2"></p>
+			<hr>
+			<h1>E-R图</h1>
+			<img src="images/e-r.png" >
+		<script>
+			{	
+			let p1=document.querySelector('#p1');
+			const form1=document.querySelector('#form1');
+			let name=document.querySelector('#a');
+			let pw=document.querySelector('#b');
+			let man=document.querySelector('#c1');
+			let woman=document.querySelector('#c2');
+			let like1=document.querySelector('#like1');
+			let like2=document.querySelector('#like2');
+			let like3=document.querySelector('#like3');
+			let resume=document.querySelector('#resume');
+			// sub.onclick=function(){
+				form1.onsubmit=function(e){
+				let pw1=pw.value.length;
+				let resumelen=resume.value.length;
+				if(name.value===''){
+				e.preventDefault(); 
+				p1.textContent='姓名不能为空';
+				}else if(pw1<2 || pw1>10){
+					e.preventDefault(); 
+					p1.textContent='密码长度2-10位';
+				}else if(man.checked==false && woman.checked==false){
+					e.preventDefault();
+					p1.textContent='性别必须选择一项';
+				}else if(like1.checked==false && like2.checked==false && like3.checked==false){
+					e.preventDefault();
+					p1.textContent='爱好必须选择一项';
+				}else if(resumelen<10){
+					e.preventDefault();
+					p1.textContent='简历至少10个字符';
+				}
+			}
+			}
+			{
+				let p2=document.querySelector('#p2');
+				const form2=document.querySelector('#form2');
+				let name2=document.querySelector('#name2');
+				let pwd2=document.querySelector('#pwd2');
+				let radio21=document.querySelector('#radio21');
+				let radio22=document.querySelector('#radio22');
+				let like21=document.querySelector('#like21');
+				let like22=document.querySelector('#like22');
+				let like23=document.querySelector('#like23');
+				let check=document.getElementsByName('checkbox2');
+				
+					form2.onsubmit=function(e){
+					let pwd2len=pwd2.value.length;
+					let num=0;
+					for(let i=0;i<check.length;i++){
+						if(check[i].checked === true){
+							num++;
+						}
+					}
+					if(name2.value===''){
+					e.preventDefault(); 
+					p2.textContent='姓名不能为空';
+					}else if(pwd2len<2 || pwd2len>10){
+						e.preventDefault(); 
+						p2.textContent='密码长度2-10位';
+					}else if(radio21.checked==false && radio22.checked==false){
+						e.preventDefault();
+						p2.textContent='性别必须选择一项';
+					}else if(num< 2){
+						e.preventDefault();
+						p2.textContent='课程至少选择两项';
+					}
+				}
+			}
+			{
+				let boxid=document.querySelector('#boxid');
+				boxid.onclick=function(){
+					let qx=document.getElementsByName('qx');
+					if (boxid.checked===false){
+						for(let i=0;i<qx.length;i++){
+							qx[i].checked=false;
+						}
+					}else{
+					for(let i=0;i<qx.length;i++){
+							qx[i].checked=true;
+						}
+					}
+				}
+				let fx=document.querySelector('#fx');
+				fx.onclick=function(){
+					let qx=document.getElementsByName('qx');
+					for(let i=0;i<qx.length;i++){
+						if(qx[i].checked===false){
+							qx[i].checked=true;
+						}else{
+							qx[i].checked=false;
+						}
+					}
+				}
+			}
+		</script>
+	</body>
+</html>
